@@ -1,3 +1,5 @@
+insert into usuario (usr,pass,nombre,apellido) values ('usr','usr','juan','mortal');
+
 create or replace function validar_usuario(usrr varchar, passs varchar) returns boolean as $$
 declare
 bandera boolean;
