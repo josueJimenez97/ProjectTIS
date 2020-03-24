@@ -18,5 +18,3 @@ CREATE TABLE sesion (
       ON DELETE NO ACTION
       ON UPDATE NO ACTION
 );
-
-
