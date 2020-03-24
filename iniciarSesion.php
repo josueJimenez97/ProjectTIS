@@ -11,8 +11,6 @@
     $usr=$_POST['nombreUser'];
     $pass=$_POST['password'];
     $conexion=conectarBD();
-    //$usr='usr';
-    //$pass='usr';
     if($usr!="" AND $pass != ""){
         $result = pg_query($conexion, "SELECT validar_usuario('$usr','$pass')");
         if (!$result) {
@@ -21,11 +19,10 @@
             while ($row = pg_fetch_row($result)) {
                 $res=$row[0];
             }
-            if($res){ 
-                //echo "datos correctos"; 
+            if($res=="t"){ 
                 header("Location: informacion.php");
             }else{
-                echo "datos incorrectos";
+                header("Location: login.html");
             }
         }
     }else{
